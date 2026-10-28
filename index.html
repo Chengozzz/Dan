@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Mini historia interactiva de cumpleaños al estilo puntillismo." />
+  <title>El Viaje del Conejo · Feliz Cumpleaños</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bangers&family=Bebas+Neue&family=Outfit:wght@400;500;700&family=Permanent+Marker&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body data-scene="miles">
+  <canvas class="dots-layer" id="dotsLayer" aria-hidden="true"></canvas>
+  <div class="print-offset" aria-hidden="true"></div>
+
+  <audio id="soundtrack" loop preload="metadata">
+    <source src="musica.mp3" type="audio/mpeg" />
+  </audio>
+
+  <header class="site-header">
+    <p class="brand">
+      <span class="brand-cyan">VIAJE</span>
+      <span class="brand-red">DEL</span>
+      <span class="brand-yellow">CONEJO</span>
+    </p>
+    <p class="tagline">cámara al hombro · un universo a la vez</p>
+    <button type="button" class="music-btn" id="btnMusic" aria-pressed="false">
+      ♪ Música
+    </button>
+  </header>
+
+  <main class="app">
+    <section class="map-section" aria-label="Cámara del viaje">
+      <div class="viewport" id="viewport">
+        <div class="world" id="world">
+          <svg class="trail-svg" id="trailSvg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+            <path id="trailPath" class="trail-path" fill="none" stroke="#f4d35e" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="2.4 1.5" />
+          </svg>
+          <div class="nodes" id="nodes" role="list" aria-label="Checkpoints"></div>
+          <div class="rabbit" id="rabbit" aria-hidden="true">
+            <svg class="rabbit-svg" viewBox="0 0 80 110" role="img" aria-label="Conejo visto de espalda">
+              <ellipse class="rabbit-shadow" cx="40" cy="102" rx="18" ry="5" fill="rgba(0,0,0,.35)" />
+              <path d="M22 38 C18 8 28 2 34 28" fill="#f3efe6" stroke="#111" stroke-width="2" />
+              <path d="M58 38 C62 8 52 2 46 28" fill="#f3efe6" stroke="#111" stroke-width="2" />
+              <path d="M28 34 C26 14 32 10 34 32" fill="#e38aa8" />
+              <path d="M52 34 C54 14 48 10 46 32" fill="#e38aa8" />
+              <ellipse cx="40" cy="58" rx="20" ry="24" fill="#f3efe6" stroke="#111" stroke-width="2.2" />
+              <ellipse cx="40" cy="84" rx="16" ry="14" fill="#f3efe6" stroke="#111" stroke-width="2.2" />
+              <ellipse cx="40" cy="72" rx="7" ry="5" fill="#c9b8a4" />
+              <circle cx="26" cy="82" r="5" fill="#f3efe6" stroke="#111" stroke-width="1.6" />
+              <circle cx="54" cy="82" r="5" fill="#f3efe6" stroke="#111" stroke-width="1.6" />
+              <ellipse cx="40" cy="96" rx="6" ry="4.5" fill="#fff" stroke="#111" stroke-width="1.6" />
+            </svg>
+          </div>
+        </div>
+        <div class="ots-vignette" aria-hidden="true"></div>
+        <p class="cam-label">CAM 02 · OVER SHOULDER</p>
+      </div>
+    </section>
+
+    <aside class="story-panel">
+      <div class="scene-frame" id="sceneFrame" aria-hidden="false"></div>
+
+      <div class="bubble" id="bubble">
+        <p class="bubble-step" id="bubbleStep">Paso 1</p>
+        <h2 class="bubble-title" id="bubbleTitle">Miles</h2>
+        <p class="bubble-message" id="bubbleMessage"></p>
+      </div>
+
+      <nav class="controls" aria-label="Controles">
+        <button type="button" class="btn btn-secondary" id="btnPrev" disabled>← Anterior</button>
+        <button type="button" class="btn btn-primary" id="btnNext">Siguiente ➔</button>
+      </nav>
+    </aside>
+  </main>
+
+  <div class="finale" id="finale" hidden>
+    <div class="finale-card" role="dialog" aria-modal="true" aria-labelledby="finaleTitle">
+      <div class="snoopy-hug" aria-hidden="true">
+        <svg viewBox="0 0 160 140" class="snoopy-svg">
+          <ellipse cx="80" cy="128" rx="36" ry="7" fill="rgba(0,0,0,.25)" />
+          <ellipse cx="80" cy="98" rx="28" ry="22" fill="#fff" stroke="#111" stroke-width="3" />
+          <circle cx="78" cy="52" r="26" fill="#fff" stroke="#111" stroke-width="3" />
+          <path d="M58 44 C40 18 28 38 52 58" fill="#1a1a1a" />
+          <circle cx="86" cy="48" r="3.2" fill="#111" />
+          <ellipse cx="90" cy="58" rx="7" ry="4" fill="#111" />
+          <path d="M92 62 Q98 68 92 70" fill="none" stroke="#111" stroke-width="2" />
+          <path d="M28 78 Q8 70 18 92 Q40 88 52 92" fill="#fff" stroke="#111" stroke-width="3" stroke-linecap="round" />
+          <path d="M108 92 Q120 88 142 92 Q152 70 132 78" fill="#fff" stroke="#111" stroke-width="3" stroke-linecap="round" />
+          <ellipse cx="68" cy="118" rx="8" ry="5" fill="#fff" stroke="#111" stroke-width="2.4" />
+          <ellipse cx="92" cy="118" rx="8" ry="5" fill="#fff" stroke="#111" stroke-width="2.4" />
+        </svg>
+      </div>
+      <p class="finale-eyebrow">Snoopy te espera</p>
+      <h2 id="finaleTitle">Feliz 23 casi 24</h2>
+      <p id="finaleMessage"></p>
+      <button type="button" class="btn btn-primary" id="btnRestart">Volver a empezar</button>
+    </div>
+  </div>
+</body>
+</html>
