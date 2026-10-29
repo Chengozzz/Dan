@@ -159,7 +159,7 @@ body[data-scene="bosque"] .world {
 }
 
 body[data-scene="tiktok"] .world {
-  background-image: linear-gradient(160deg, #2a1020, #12081a 55%, #3a1028);
+  background-image: url("assets/Taekook.jpg");
 }
 
 body[data-scene="love"] .world {
@@ -172,9 +172,7 @@ body[data-scene="luna"] .world {
 }
 
 body[data-scene="snoopy"] .world {
-  background-image: radial-gradient(circle at 50% 30%, #fff6, transparent 35%),
-    linear-gradient(180deg, #87b7ff, #f7d9a8);
-}
+  background-image: url("assets/TikTok.jpg");
 
 .trail-svg {
   position: absolute;
@@ -322,7 +320,7 @@ body[data-scene="snoopy"] .world {
 }
 
 .miles-scene {
-  background: url("assets/ciudad-puntillismo.jpg") center / cover;
+  background: url("assets/Miles.jfif") center / cover;
 }
 
 .miles-figure {
@@ -407,7 +405,7 @@ body[data-scene="snoopy"] .world {
 .takis-bag {
   width: min(46%, 160px);
   aspect-ratio: 3 / 4;
-  background: url("assets/Takis.avif") center / cover;
+  background: url("assets/Takis.png") center / cover;
   border: 2px solid #111;
   transform-origin: 50% 8%;
   animation: bag-idle 2s ease-in-out infinite;
@@ -463,7 +461,7 @@ body[data-scene="snoopy"] .world {
 }
 
 .bosque-scene {
-  background: url("assets/bosque-noche.jpg") center / cover;
+  background: url("assets/hard-sex.jpg") center / cover;
 }
 
 .bosque-scene .hard-text {
