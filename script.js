@@ -31,7 +31,7 @@
       id: "tiktok",
       x: 58,
       y: 20,
-      titulo: "Puedo ser el  de tu ",
+      titulo: "Puedo ser el jungkook de tu taehyung",
       mensaje:
         "Podemos ser nosotros si me permites estar a tu lado en tu presente y futuro.",
     },
@@ -39,14 +39,14 @@
       id: "love",
       x: 78,
       y: 42,
-      titulo: "Pediste algo asi, no?",
-      mensaje: "Mira que bonito",
+      titulo: "Que hermosa la luna",
+      mensaje: "Al ver la luna me acordé de ti",
     },
     {
       id: "luna",
       x: 62,
       y: 70,
-      titulo: "Una Burgir",
+      titulo: "Que mejor que una hamburguesa trriple",
       mensaje: "Te me antojas igual que una hamburguesa trriple",
     },
     {
